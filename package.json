@@ -1,0 +1,20 @@
+{
+    "name": "typescript-express",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "andika",
+    "license": "MIT",
+    "scripts": {
+        "tsc": "rm -rf build/ && tsc",
+        "ts": "rm -rf build/ && tsc -w",
+        "dev": "nodemon ./build/index.js"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.7",
+        "nodemon": "^2.0.4",
+        "typescript": "^3.9.7"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
