@@ -4,8 +4,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-var app = express_1.default();
-app.route("/").get(function (req, res) {
-    res.send("hi");
+var App = /** @class */ (function () {
+    function App() {
+        this.app = express_1.default();
+        this.routes();
+    }
+    App.prototype.routes = function () {
+        this.app.route("/").get(function (req, res) {
+            res.send("ini adalah route typescript");
+        });
+    };
+    return App;
+}());
+var port = 8000;
+var app = new App().app;
+app.listen(port, function () {
+    console.log("listening to port " + port);
 });
-app.listen(8000);
